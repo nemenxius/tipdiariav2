@@ -1,6 +1,6 @@
 import { LoginForm } from "@/components/login-form";
 
-export default function LoginPage({ searchParams }: { searchParams?: { next?: string } }) {
+export default function LoginPage({ searchParams }: { searchParams?: { next?: string; error?: string } }) {
   return (
     <main className="login-wrap">
       <section className="login-shell">
@@ -14,7 +14,7 @@ export default function LoginPage({ searchParams }: { searchParams?: { next?: st
             <span className="stat-pill">Mongo-backed</span>
           </div>
         </div>
-        <LoginForm nextPath={searchParams?.next} />
+        <LoginForm nextPath={searchParams?.next} error={searchParams?.error} />
       </section>
     </main>
   );

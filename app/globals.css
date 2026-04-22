@@ -247,6 +247,16 @@ p {
   gap: 8px;
 }
 
+.form-error {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(180, 65, 37, 0.18);
+  background: rgba(180, 65, 37, 0.08);
+  color: #7e2a18;
+  font-size: 0.95rem;
+}
+
 .settings-form {
   display: grid;
   gap: 18px;

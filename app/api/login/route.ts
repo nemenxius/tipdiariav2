@@ -8,17 +8,22 @@ export async function POST(request: Request) {
   const password = String(formData.get("password") ?? "");
   const next = String(formData.get("next") ?? "/tips");
 
-  if (!(await verifyUser(username, password))) {
-    return NextResponse.redirect(new URL("/login?error=invalid", request.url), 303);
-  }
+  try {
+    if (!(await verifyUser(username, password))) {
+      return NextResponse.redirect(new URL("/login?error=invalid", request.url), 303);
+    }
 
-  const token = await createSessionToken(username);
-  const response = NextResponse.redirect(new URL(next, request.url), 303);
-  response.cookies.set("tip_session", token, {
-    httpOnly: true,
-    sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
-    path: "/"
-  });
-  return response;
+    const token = await createSessionToken(username);
+    const response = NextResponse.redirect(new URL(next, request.url), 303);
+    response.cookies.set("tip_session", token, {
+      httpOnly: true,
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
+      path: "/"
+    });
+    return response;
+  } catch (error) {
+    console.error("Login failed during server verification", error);
+    return NextResponse.redirect(new URL("/login?error=server", request.url), 303);
+  }
 }
