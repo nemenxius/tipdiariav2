@@ -13,11 +13,7 @@ export function LoginForm({ nextPath }: { nextPath?: string }) {
         Password
         <input name="password" type="password" required />
       </label>
-      <button type="submit">Enter dashboard</button>
-      <div className="login-note">
-        <span className="badge badge-watch">Private</span>
-        <p className="muted">Default admin password is `change-me-now` unless `TIP_ADMIN_PASSWORD` is set.</p>
-      </div>
+      <button type="submit">Enter dashboard</button>     
     </form>
   );
 }

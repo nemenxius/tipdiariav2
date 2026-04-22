@@ -17,7 +17,7 @@ export async function POST(request: Request) {
   response.cookies.set("tip_session", token, {
     httpOnly: true,
     sameSite: "lax",
-    secure: false,
+    secure: process.env.NODE_ENV === "production",
     path: "/"
   });
   return response;

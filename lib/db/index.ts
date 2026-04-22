@@ -206,17 +206,29 @@ async function ensureInitialized(db: Db) {
         }
       }
 
+      const defaultPassword = process.env.TIP_ADMIN_PASSWORD;
+      if (!defaultPassword) {
+        throw new Error("Missing TIP_ADMIN_PASSWORD. Set it in your local env and in Vercel before first run.");
+      }
+
       const adminUser = await db.collection("users").findOne({ username: "admin" });
+      const nextPasswordHash = bcrypt.hashSync(defaultPassword, 10);
+
       if (!adminUser) {
-        const defaultPassword = process.env.TIP_ADMIN_PASSWORD;
-        if (!defaultPassword) {
-          throw new Error("Missing TIP_ADMIN_PASSWORD. Set it in your local env and in Vercel before first run.");
-        }
         await db.collection("users").insertOne({
           username: "admin",
-          password_hash: bcrypt.hashSync(defaultPassword, 10),
+          password_hash: nextPasswordHash,
           created_at: now
         });
+      } else if (!bcrypt.compareSync(defaultPassword, String(adminUser.password_hash))) {
+        await db.collection("users").updateOne(
+          { username: "admin" },
+          {
+            $set: {
+              password_hash: nextPasswordHash
+            }
+          }
+        );
       }
     })();
   }
