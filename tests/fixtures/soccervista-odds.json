@@ -1,0 +1,37 @@
+{
+  "jubPoemo": {
+    "odds_1x2": {
+      "417": {
+        "id": 417,
+        "name": "1xBet",
+        "url": "https://example.test/1xbet",
+        "1": { "current": "2.55" },
+        "2": { "current": "2.78" },
+        "x": { "current": "3.8" }
+      }
+    },
+    "odds_ou": {
+      "2.5": {
+        "417": {
+          "id": 417,
+          "name": "1xBet",
+          "url": "https://example.test/1xbet",
+          "over": { "current": "1.71" },
+          "under": { "current": "2.32" }
+        }
+      }
+    },
+    "odds_dc": {
+      "double chance": {
+        "417": {
+          "id": 417,
+          "name": "1xBet",
+          "url": "https://example.test/1xbet",
+          "1x": { "current": "1.44" },
+          "x2": { "current": "1.58" },
+          "12": { "current": "1.29" }
+        }
+      }
+    }
+  }
+}

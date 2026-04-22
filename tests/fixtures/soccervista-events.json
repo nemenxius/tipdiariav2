@@ -1,0 +1,76 @@
+[
+  {
+    "id": "KKay4EE8",
+    "name": "Premier League",
+    "countryName": "England",
+    "countryCode": null,
+    "countryUrl": "england",
+    "url": "/england/premier-league/dYlOSQOD/",
+    "tournamentTemplateId": "dYlOSQOD",
+    "events": [
+      {
+        "id": "jubPoemo",
+        "timeStart": 1776798000,
+        "time": "19:00",
+        "homeTeam": "Brighton",
+        "awayTeam": "Chelsea",
+        "homeTeamUrl": "brighton",
+        "awayTeamUrl": "chelsea",
+        "homeTeamForm": ["draw", "win", "win", "win", "lost"],
+        "awayTeamForm": ["lost", "lost", "win", "lost", "lost"],
+        "homeEventParticipantId": "hxT5YAzG",
+        "awayEventParticipantId": "02WDWl5S",
+        "odds": [],
+        "score": null,
+        "isLive": false,
+        "isFinished": false,
+        "isScheduled": true,
+        "isPaused": false,
+        "isPostponed": false,
+        "isCancelled": false,
+        "prediction1x2": 1,
+        "predictionOu": "O",
+        "predictionScore": "2:1",
+        "predictionPoints": 5,
+        "predictionMatchWinner": "5 on BHA"
+      }
+    ]
+  },
+  {
+    "id": "UkksTK1s",
+    "name": "LaLiga",
+    "countryName": "Spain",
+    "countryCode": "ES",
+    "countryUrl": "spain",
+    "url": "/spain/laliga/QVmLl54o/",
+    "tournamentTemplateId": "QVmLl54o",
+    "events": [
+      {
+        "id": "657hGExA",
+        "timeStart": 1776790800,
+        "time": "17:00",
+        "homeTeam": "Mallorca",
+        "awayTeam": "Valencia",
+        "homeTeamUrl": "mallorca",
+        "awayTeamUrl": "valencia",
+        "homeTeamForm": ["win", "win", "lost", "win", "draw"],
+        "awayTeamForm": ["lost", "lost", "win", "lost", "win"],
+        "homeEventParticipantId": "hbnLmXtK",
+        "awayEventParticipantId": "lUXjrB4s",
+        "odds": [],
+        "score": null,
+        "isLive": false,
+        "isFinished": false,
+        "isScheduled": true,
+        "isPaused": false,
+        "isPostponed": false,
+        "isCancelled": false,
+        "prediction1x2": 1,
+        "predictionOu": "U",
+        "predictionScore": "1:0",
+        "predictionPoints": 7,
+        "predictionMatchWinner": "7 on MAL"
+      }
+    ]
+  }
+]
